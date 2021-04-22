@@ -100,6 +100,62 @@ public enum TableToSyncEnum {
     }
 
     public static TableToSyncEnum getTableToSyncEnum(final String tableToSync) {
+        if ("PERSONATTRIBUTE".equals(tableToSync.toUpperCase())) {
+            return valueOf("PERSON_ATTRIBUTE");
+
+        }
+        if ("PATIENTPROGRAM".equals(tableToSync.toUpperCase())) {
+            return valueOf("PATIENT_PROGRAM");
+
+        }
+        if ("PATIENTSTATE".equals(tableToSync.toUpperCase())) {
+            return valueOf("PATIENTSTATE");
+
+        }
+        if ("CONCEPTATTRIBUTE".equals(tableToSync.toUpperCase())) {
+            return valueOf("CONCEPT_ATTRIBUTE");
+
+        }
+        if ("LOCATIONATTRIBUTE".equals(tableToSync.toUpperCase())) {
+            return valueOf("LOCATION_ATTRIBUTE");
+
+        }
+        if ("PROVIDERATTRIBUTE".equals(tableToSync.toUpperCase())) {
+            return valueOf("PROVIDER_ATTRIBUTE");
+
+        }
+        if ("VISITATTRIBUTE".equals(tableToSync.toUpperCase())) {
+            return valueOf("VISIT_ATTRIBUTE");
+
+        }
+        if ("ENCOUNTERDIAGNOSIS".equals(tableToSync.toUpperCase())) {
+            return valueOf("ENCOUNTER_DIAGNOSIS");
+
+        }
+        if ("PERSONNAME".equals(tableToSync.toUpperCase())) {
+            return valueOf("PERSON_NAME");
+
+        }
+        if ("PERSONADDRESS".equals(tableToSync.toUpperCase())) {
+            return valueOf("PERSON_ADDRESS");
+
+        }
+        if ("PATIENTIDENTIFIER".equals(tableToSync.toUpperCase())) {
+            return valueOf("PATIENT_IDENTIFIER");
+
+        }
+        if ("DRUGORDER".equals(tableToSync.toUpperCase())) {
+            return valueOf("DRUG_ORDER");
+
+        }
+        if ("TESTORDER".equals(tableToSync.toUpperCase())) {
+            return valueOf("TEST_ORDER");
+
+        }
+        if ("ORDERFREQUENCY".equals(tableToSync.toUpperCase())) {
+            return valueOf("ORDER_FREQUENCY");
+
+        }
         return valueOf(tableToSync.toUpperCase());
     }
 

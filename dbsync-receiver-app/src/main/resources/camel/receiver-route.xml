@@ -27,6 +27,7 @@
             </when>
             <otherwise>
                 <log message="Received entity-payload: ${body}" />
+                <convertBodyTo type="java.lang.String"/>
                 <choice>
                     <when>
                         <!-- If this not a record for a deleted entity -->
@@ -46,7 +47,7 @@
                             <simple>${body}</simple>
                         </setProperty>
                         <setProperty name="entity-table">
-                            <simple>${body.trim().split(":")[1]}</simple>
+                            <simple>${body.trim().split(":")[1].split(",")[0].split("\W")[6].split("Model")[0]}</simple>
                         </setProperty>
                         <setProperty name="table-to-sync-enum">
                             <method beanType="org.openmrs.eip.component.service.TableToSyncEnum" method="getTableToSyncEnum(${exchangeProperty.entity-table})" />
@@ -55,7 +56,7 @@
                             <simple>${exchangeProperty.table-to-sync-enum.getModelClass().getName()}</simple>
                         </setProperty>
                         <setProperty name="entity-id">
-                            <simple>${body.trim().split(":")[2]}</simple>
+                            <simple>${body.trim().split(":")[2].split(",")[0]}</simple>
                         </setProperty>
                     </otherwise>
                 </choice>
